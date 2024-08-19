@@ -12,7 +12,7 @@ namespace samp_helper {
         base_address_found = true;
     }
 
-    bool sampCheckpointActive()
+    bool constexpr sampCheckpointActive()
     {
         CheckBaseAddress();
         void* pointer_ref = (void*)(base_address);
