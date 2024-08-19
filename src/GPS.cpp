@@ -365,7 +365,7 @@ void GPS::GameEventHandle()
 
 constexpr void GPS::DrawHudEventHandle()
 {
-	if (samp_helper::sampCheckpointActive())
+	if (true)
 	{
 		CFont::SetOrientation(ALIGN_CENTER);
 		CFont::SetColor(SetupColor(this->mTrace->m_nColour, this->mTrace->m_bFriendly, cfg));
