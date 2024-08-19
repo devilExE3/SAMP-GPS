@@ -8,7 +8,9 @@ namespace samp_helper {
     void constexpr CheckBaseAddress()
     {
         if(base_address_found) return;
-        base_address = (UINT_PTR)GetModuleHandleA("samp.dll") + CHECKPOINT_BASE_OFFSET;
+        base_address = (UINT_PTR)GetModuleHandleA("samp.dll");
+        if(base_address == 0) return;
+        base_address += CHECKPOINT_BASE_OFFSET;
         base_address_found = true;
     }
 
