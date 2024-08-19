@@ -370,8 +370,8 @@ constexpr void GPS::DrawHudEventHandle()
 
 	CFont::SetBackground(false, false);
 	CFont::SetWrapx(500.0f);
-	CFont::SetScale(0.3f * static_cast<float>(RsGlobal.maximumWidth) / 640.0f,
-					0.6f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f);
+	CFont::SetScale(0.3f * 1920f / 640.0f,
+					0.6f * 1080f / 448.0f);
 	CFont::SetFontStyle(FONT_SUBTITLES);
 	CFont::SetProportional(true);
 	CFont::SetDropShadowPosition(1);
