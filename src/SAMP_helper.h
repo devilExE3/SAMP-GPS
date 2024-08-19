@@ -5,7 +5,7 @@ namespace samp_helper {
     bool base_address_found = false;
     UINT_PTR base_address = 0;
 
-    void CheckBaseAddress()
+    void constexpr CheckBaseAddress()
     {
         if(base_address_found) return;
         base_address = (UINT_PTR)GetModuleHandleA("samp.dll") + CHECKPOINT_BASE_OFFSET;
