@@ -409,7 +409,7 @@ constexpr void GPS::DrawHudEventHandle()
 		CRadar::TransformRadarPointToScreenSpace(point, CVector2D(0.0f, -1.0f));
 		CFont::PrintString(
 			point.x, point.y + 8.0f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f,
-			(char *)makeDist(distCache.GetDist(FindPlayerCoors(0), destVec), cfg.DISTANCE_UNITS).c_str());
+			"samp CP");
 	}
 
 	if (renderTargetRoute)
