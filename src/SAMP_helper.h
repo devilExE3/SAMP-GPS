@@ -17,8 +17,7 @@ namespace samp_helper {
     bool constexpr sampCheckpointActive()
     {
         CheckBaseAddress();
-        void* pointer_ref = (void*)(base_address);
-        pointer_ref = *(void**)((UINT_PTR)pointer_ref + 0x24);
+        bool* pointer_ref = *(bool**)(base_address + 0x24);
         return *(bool*)pointer_ref;
     }
 }
