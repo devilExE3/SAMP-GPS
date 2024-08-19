@@ -1,4 +1,5 @@
 #include "GPS.h"
+#include "SAMP_helper.h"
 
 void GPS::calculatePath(CVector destPosn, short &nodesCount, CNodeAddress *resultNodes, float &gpsDistance)
 {
@@ -414,5 +415,25 @@ constexpr void GPS::DrawHudEventHandle()
 					CVector(CRadar::ms_RadarTrace[LOWORD(FrontEndMenuManager.m_nTargetBlipIndex)].m_vecPos)),
 				cfg.DISTANCE_UNITS)
 				.c_str());
+	}
+
+	if(samp_helper::sampCheckpointActive())
+	{
+		CFont::SetOrientation(ALIGN_CENTER);
+		CFont::SetColor(cfg.GPS_LINE_CLR);
+
+		CFont::SetBackground(false, false);
+		CFont::SetWrapx(500.0f);
+		CFont::SetScale(0.3f * static_cast<float>(RsGlobal.maximumWidth) / 640.0f,
+						0.6f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f);
+		CFont::SetFontStyle(FONT_SUBTITLES);
+		CFont::SetProportional(true);
+		CFont::SetDropShadowPosition(1);
+		CFont::SetDropColor(CRGBA(0, 0, 0, 180));
+
+		CVector2D point;
+		CRadar::TransformRadarPointToScreenSpace(point, CVector2D(0.0f, 1.0f));
+		CFont::PrintString(point.x, point.y - 20.0f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f, "CHECKPOINT ACTIVE");
+		
 	}
 }
