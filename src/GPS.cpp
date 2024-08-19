@@ -365,11 +365,11 @@ void GPS::GameEventHandle()
 
 constexpr void GPS::DrawHudEventHandle()
 {
-	if (samp_helper::sampCheckpointActive())
+	if (true)
 	{
 		CFont::SetOrientation(ALIGN_CENTER);
 		CFont::SetColor(cfg.GPS_LINE_CLR);
-		
+
 		CFont::SetBackground(false, false);
 		CFont::SetWrapx(500.0f);
 		CFont::SetScale(0.3f * static_cast<float>(RsGlobal.maximumWidth) / 640.0f,
