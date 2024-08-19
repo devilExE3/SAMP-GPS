@@ -365,11 +365,11 @@ void GPS::GameEventHandle()
 
 constexpr void GPS::DrawHudEventHandle()
 {
-	if (true)
+	if (samp_helper::sampCheckpointActive())
 	{
 		CFont::SetOrientation(ALIGN_CENTER);
 		CFont::SetColor(cfg.GPS_LINE_CLR);
-
+		
 		CFont::SetBackground(false, false);
 		CFont::SetWrapx(500.0f);
 		CFont::SetScale(0.3f * static_cast<float>(RsGlobal.maximumWidth) / 640.0f,
@@ -380,9 +380,9 @@ constexpr void GPS::DrawHudEventHandle()
 		CFont::SetDropColor(CRGBA(0, 0, 0, 180));
 
 		CVector2D point;
-		CRadar::TransformRadarPointToScreenSpace(point, CVector2D(0.0f, 1.0f));
+		CRadar::TransformRadarPointToScreenSpace(point, CVector2D(0.0f, -1.0f));
 		CFont::PrintString(
-			point.x, point.y - 20.0f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f,
+			point.x, point.y + 8.0f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f,
 			"samp CP");
 	}
 
