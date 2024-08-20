@@ -1,5 +1,5 @@
 #include "GPS.h"
-#include "SAMP_helper.h"
+#include "SAMP_helper.hpp"
 
 void GPS::calculatePath(CVector destPosn, short &nodesCount, CNodeAddress *resultNodes, float &gpsDistance)
 {
