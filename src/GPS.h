@@ -96,9 +96,9 @@ class GPS
 	CPathNode *currentNode;
 	CVector nodePosn;
 
-	constexpr void DrawRadarOverlayHandle();
+	void DrawRadarOverlayHandle();
 	void GameEventHandle();
-	constexpr void DrawHudEventHandle();
+	void DrawHudEventHandle();
 
 	void Run();
 

@@ -371,9 +371,9 @@ void GPS::DrawHudEventHandle()
 	if (!NavEnabled(player))
 		return;
 	
-	logger.Log(samp_helper::sampCheckpointActive() ? "cp set" : "cp not set");
+	logger.Log(sampCheckpointActive() ? "cp set" : "cp not set");
 
-	if (samp_helper::sampCheckpointActive())
+	if (sampCheckpointActive())
 	{
 		CFont::SetOrientation(ALIGN_CENTER);
 		CFont::SetColor(cfg.GPS_LINE_CLR);

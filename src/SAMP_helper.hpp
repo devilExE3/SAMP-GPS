@@ -20,6 +20,6 @@ inline bool isSampAvailable()
 inline bool sampCheckpointActive()
 {
     if(!isSampAvailable()) return false;
-    bool* pointer_ref = *(bool**)(sampGetBase() + 0x21A10C + 0x24);
-    return *(bool*)pointer_ref;
+    void* pointer_ref = *reinterpret_cast<void**>(sampGetBase() + CHECKPOINT_BASE_OFFSET + 0x24);
+    return *reinterpret_cast<bool*>(pointer_ref);
 }
