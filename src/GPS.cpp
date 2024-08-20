@@ -430,11 +430,6 @@ constexpr void GPS::DrawHudEventHandle()
 		CRadar::TransformRadarPointToScreenSpace(point, CVector2D(0.0f, 1.0f));
 		CFont::PrintString(
 			point.x, point.y - 20.0f * static_cast<float>(RsGlobal.maximumHeight) / 448.0f,
-			(char *)makeDist(
-				distCache.GetDist(
-					CVector(player->GetPosition()),
-					CVector(CRadar::ms_RadarTrace[LOWORD(FrontEndMenuManager.m_nTargetBlipIndex)].m_vecPos)),
-				cfg.DISTANCE_UNITS)
-				.c_str());
+			"samp CP");
 	}
 }
