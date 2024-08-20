@@ -261,7 +261,7 @@ constexpr bool GPS::NavEnabled(CPed *player)
 			!CheckBMX(player));
 }
 
-constexpr void GPS::DrawRadarOverlayHandle()
+void GPS::DrawRadarOverlayHandle()
 {
 	if (!NavEnabled(player))
 		return;
@@ -363,7 +363,7 @@ void GPS::GameEventHandle()
 	}
 }
 
-constexpr void GPS::DrawHudEventHandle()
+void GPS::DrawHudEventHandle()
 {
 	if (!cfg.ENABLE_DISTANCE_TEXT)
 		return;
